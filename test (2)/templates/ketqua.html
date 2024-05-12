@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HTML/CSS">
+  <meta name="author" content="Anil">
+  <title>Website -Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="static/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      font-weight: 400;
+      color: #606060;
+    }
+
+    .extradiv h2,
+    .servicediv h2 {
+      font-size: 0.9rem;
+      margin: 20px 0 15px 0;
+      font-weight: bold;
+      line-height: 1.1;
+      word-spacing: 4px;
+    }
+
+    i {
+      color: #2fccd0;
+    }
+
+    /* XXXXXXXXXXXXXXXXXXXXX common style ends here XXXXXXXXXXXXXXXXXXX */
+    .header {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 168, 255, 0.3), rgba(0, 168, 255, 0.3)), url("../image/header-bg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      clip-path: polygon(100% 0, 100% 77%, 50% 100%, 0 75%, 0 0);
+      position: relative;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0.4;
+      z-index: -1;
+      background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
+    }
+
+    .navbar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0.4;
+      z-index: -1;
+      background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
+    }
+
+    .nav-item a {
+      color: #fff !important;
+      font-weight: bold;
+    }
+
+    .header-section {
+      width: 100%;
+      height: inherit;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .center-div {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+    }
+
+    .header-buttons a {
+      border: 1px solid #fff;
+      border-radius: 100px;
+      margin: 0 5px;
+      padding: 12px 35px;
+      outline: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .header-buttons a:hover {
+      text-decoration: none;
+      color: #50d1c0;
+      background-color: #fff;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .center-div p {
+      font-size: 1.3rem;
+      padding: 10px 0 20px 0;
+      color: #fff;
+    }
+
+    /* ********************* three extra header div starts ******************** */
+
+    .header-extradiv {
+      width: 100%;
+      height: auto;
+      margin: 100px 0;
+      text-align: center;
+    }
+
+    .extradiv p {
+      text-align: justify;
+    }
+
+    .extradiv {
+      background-color: #fff;
+      border: none;
+      padding: 30px !important;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    .extradiv:hover {
+      box-shadow: -10px 0px 20px 0 rgba(0, 0, 0, 0.3);
+      transform: translateY(-20px);
+    }
+
+    /* ********************* three extra header div ends ******************** */
+
+    /* ******************* service offer css start ********************** */
+
+    .serviceoffers {
+      background-color: #f7f7f9;
+      padding: 50px 0;
+      margin-bottom: 50px;
+    }
+
+    .headings {
+      margin-bottom: 50px;
+    }
+
+    .headings h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .names h1 {
+      color: #2e2e2e;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .service-icons {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .progress {
+      height: 0.6rem !important;
+      margin-bottom: 25px !important;
+    }
+
+    /* ******************* service offer css ends ********************** */
+
+    /* ********************* project (completed) starts ****************************** */
+
+    .project-work {
+      margin: 100px 0;
+    }
+
+    .project-work h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    /* ********************* project (completed) ends ****************************** */
+
+    /* ********************* our pricing starts ******************************  */
+
+    .pricing {
+      width: 100%;
+      height: 100vh;
+      padding: 50px;
+      position: relative;
+    }
+
+    .pricing::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      background: linear-gradient(160deg, #16c9f6 55%, #fff 0%);
+    }
+
+    .money {
+      font-size: 40px;
+      line-height: 1;
+      color: #606060;
+    }
+
+    .card {
+      transition: 0.4s ease;
+
+    }
+
+    .card-header {
+      font-size: 1.6rem;
+      font-weight: bold;
+      background: #fff !important;
+      padding: 25px 0 !important;
+    }
+
+    .card-body {
+      padding: 30px 0 !important;
+    }
+
+    .card-body li {
+      margin: 10px 0;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #606060;
+    }
+
+    .card-footer {
+      background: #fff !important;
+      padding: 30px 0 !important;
+    }
+
+    .card-footer a {
+      border: 1px solid #50c1d0;
+      border-radius: 100px;
+      margin: 0 5px;
+      padding: 12px 35px;
+      outline: none;
+      color: #50d1c0;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .card:hover .card-footer a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #50d1c0;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover .card-header,
+    .card:hover .money {
+      color: #50d1c0;
+    }
+
+    .card-second {
+      transform: translateY(-20px);
+      /* box-shadow: 0 0 20px 0 rgba(0,0,0,0.3); */
+    }
+
+    /* ********************* our pricing ends ****************************** */
+
+
+    /* ********************* our happy clients starts ******************************  */
+
+    .happyclients {
+      width: 100%;
+      height: 100vh;
+      padding: 80px 0;
+    }
+
+    .box {
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .box:hover {
+      background: #16c9f6;
+    }
+
+    .box:hover p {
+      color: #fff;
+    }
+
+    .carousel-indicators {
+      position: absolute;
+      right: 0;
+      bottom: -60px !important;
+    }
+
+    .carousel-indicators li {
+      background-color: #16c9f6 !important;
+    }
+
+    .box a {
+      position: relative;
+    }
+
+    .box a img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+
+    .box a::after {
+      content: "\f10d";
+      font-family: FontAwesome;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
+      color: #fff;
+      position: absolute;
+      top: 120%;
+      left: 70%;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box h1 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .box h2 {
+      font-size: 13px;
+      font-weight: 400;
+      color: #666666;
+      margin-bottom: 20px;
+    }
+
+    /* ********************* our happy clients ends ******************************  */
+
+
+    /* ********************* contact us starts ******************************  */
+
+    .contactus {
+      width: 100%;
+      height: 100vh;
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .contactus::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      background: linear-gradient(330deg, #16c9f6 55%, #fff 0%);
+    }
+
+    .form-button button {
+      border: 1px solid #50c1d0;
+      border-radius: 100px;
+      margin: 0 5px;
+      padding: 12px 35px;
+      outline: none;
+      color: #50d1c0;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.4;
+      text-align: center;
+      background: transparent;
+    }
+
+    form:hover .form-button button {
+      background: #fff;
+      color: #50d1c0;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    ::placeholder {
+      font-size: 0.85rem;
+    }
+
+    /* ********************* contact us ends ******************************  */
+
+    /* ********************* newsletter starts ****************************** */
+
+    .newsletter {
+      width: 100%;
+      height: auto;
+      margin: 80px 0;
+    }
+
+    .newsletter-input {
+      border-radius: 100px 0px 0px 100px !important;
+      min-width: 150px;
+      min-height: 45px;
+    }
+
+    .input-group-text {
+      color: #fff !important;
+      background: #5bc0de !important;
+      border-radius: 0 100px 100px 0 !important;
+      min-width: 130px;
+      min-height: 45px;
+    }
+
+    .input-group-text:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    /* *********************  newsletter ends ****************************** */
+
+    /* *********************  footer starts ****************************** */
+
+    .footersection {
+      width: 100%;
+      height: auto;
+      padding: 70px 0 20px 0;
+      background: #00abff;
+      position: relative;
+    }
+
+    .footersection p {
+      color: #fff;
+    }
+
+    .footer-navlinks {
+      text-align: center;
+    }
+
+    .footersection li a {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      font-weight: 400;
+      color: #fff;
+      text-transform: capitalize;
+    }
+
+    .footersection h3 {
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 25px;
+      font-size: 1.2rem !important;
+      font-weight: 600;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    #myBtn {
+      /* display: none; */
+      position: fixed;
+      bottom: 20px;
+      right: 40px;
+      z-index: 10;
+      border: none;
+      color: #fff;
+      background: #00abff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    #myBtn:hover {
+      background: #606060;
+    }
+
+    /* *********************  footer ends ****************************** */
+
+
+    /* ****************** Media Queries ********************** */
+    @media (max-width: 768px) {
+      .nav-item {
+        text-align: center !important;
+      }
+
+      .pricing,
+      .happyclients,
+      .contactus {
+        height: auto;
+        margin-top: 50px;
+      }
+
+      .card-second {
+        transform: translateY(0px);
+        margin: 30px 0;
+      }
+
+      .contactus p {
+        padding: 0 50px;
+      }
+
+      .footer-navlinks {
+        text-align: left;
+      }
+
+      .footer-div {
+        margin: 30px 0;
+      }
+
+      .content {
+        border: 1px solid black;
+      }
+    }
+
+    .toiyeucss th,
+    td {
+      border: 3px solid #f7f7f7;
+      text-align: left;
+      padding: 20px 1px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .toiyeucss td {
+      background-color: #fff;
+    }
+
+    .toiyeucss th {
+      background-color: #f2f2f2;
+    }
+
+    .toiyeucss input[type="text"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: none;
+      background-color: transparent;
+      text-align: center;
+      color: deepskyblue;
+      /* Set text color to white */
+    }
+
+    .toiyeucss td {
+      position: relative;
+    }
+
+    input[type="text"]:disabled {
+      background-color: #f2f2f2;
+    }
+
+    .control1 button {
+      background-color: white;
+    }
+
+    @keyframes landigerant {
+      0% {
+        border-color: #dddddd;
+      }
+
+      50% {
+        border-color: blue
+      }
+
+      100% {
+        border-color: #dddddd;
+      }
+    }
+
+    .toiyeucss td::before {
+      content: '';
+      /* Cần thiết cho pseudo-element */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid transparent;
+      /* Độ dày và kiểu đường viền của pseudo-element */
+      animation: landigerant 2s infinite;
+      /* Thời gian, hiệu ứng và lặp lại */
+    }
+  </style>
+</head>
+
+<body>
+  <section class="serviceoffers" id="servicediv">
+    <div class="container headings text-center">
+      <h1 class="text-center font-weight-bold">KẾT QUẢ TÍNH TOÁN</h1>
+      <p class="text-center">Kết quả được tính toán sau khi nhập trọng số ma trận</p>
+    </div>
+    <div class="container-screen">
+      <h2>Danh sách các tiêu chí:</h2>
+      <ul>
+        {% for criteria in criteria_data %}
+        <li>{{ criteria }}</li>
+        {% endfor %}
+      </ul>
+
+      <h2>Ma trận AHP với tổng của các cột:</h2>
+      <table border="1" class="ahp-matrix">
+        <caption>Tổng sum AHP của mỗi cột</caption>
+        <thead>
+          <tr>
+            <th></th>
+            {% for criteria in criteria_data %}
+            <th class="header-select">{{ criteria }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row_index in range(result['matrix']|length) %}
+          <tr class="">
+            <th class="header-select">{{ criteria_data[row_index] }}</th>
+            {% for col_index in range(result['matrix'][row_index]|length) %}
+            <td class="{% if row_index == col_index %}diagonal{% endif %}">{{
+              result['matrix'][row_index][col_index] }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+          <tr>
+            <th class="total-select">Tổng</th>
+            {% for val in result['column_sum'] %}
+            <td class="total-select">{{ val }}</td>
+            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+      <h2>Ma trận so sánh cặp:</h2>
+      <table border="1" class="ahp-matrix">
+        <caption>Ma trận so sánh cặp</caption>
+        <thead>
+          <tr>
+            <th></th>
+            {% for criteria in criteria_data %}
+            <th class="header-select">{{ criteria }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row_index in range(result['pairwise_matrix_with_weights']|length) %}
+          <tr>
+            <th class="header-select">{{ criteria_data[row_index] }}</th>
+            {% for val in result['pairwise_matrix_with_weights'][row_index] %}
+            <td>{{ val }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <h2>Ma trận so sánh cặp với trọng số của các tiêu chí</h2>
+      <table border="1" class="ahp-matrix">
+        <caption>Ma trận so sánh cặp với trọng số của các tiêu chí</caption>
+        <thead>
+          <tr>
+            <th></th>
+            {% for criteria in criteria_data %}
+            <th class="header-select">{{ criteria }}</th>
+            {% endfor %}
+            <th class="weighted-column">Critera Weighted</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% set row_index = 0 %}
+          {% for row in result['pairwise_matrix_with_weights'] %}
+          <tr>
+            <th class="header-select">{{ criteria_data[loop.index0] }}</th>
+            {% for val in row[0:] %}
+            <td>{{ val }}</td>
+            {% endfor %}
+            <td class="weighted-column">{{ row[0] }}</td>
+          </tr>
+          {% set row_index = row_index + 1 %}
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h2>Ma trận so sánh cặp theo trọng số của các tiêu chí:</h2>
+      <table border="1">
+        <caption>Ma trận so sánh cặp theo trọng số của các tiêu chí</caption>
+        <thead>
+          <tr>
+            <th></th>
+            {% for criteria in criteria_data %}
+            <th class="header-select">{{ criteria }}</th>
+            {% endfor %}
+            <th class="weightsum-value">Weighted Sum Value</th>
+            <th class="weighted-column">Critera Weighted</th>
+            <th class="consistency-vector">Consistency Vector</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row_index in range(result['weighted_matrix']|length) %}
+          <tr>
+            <th class="header-select">{{ criteria_data[row_index] }}</th>
+            {% for col_index in range(result['weighted_matrix'][row_index]|length) %}
+            <td>{{ result['weighted_matrix'][row_index][col_index] }}</td>
+            {% endfor %}
+            <td class="weightsum-value1">{{ result['weighted_sum_value'][row_index] }}</td>
+            <td class="weighted-column1">{{ result['normalized_weights'][row_index] }}</td>
+            <td class="consistency-vector1">{{ result['consistency_vector'][row_index] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!-- Kết quả phân tích AHP -->
+      <h2>Kết quả phân tích AHP:</h2>
+      <table border="1">
+        <caption>Kết quả phân tích AHP</caption>
+        <tbody>
+          <tr>
+            <th class="header-select">Đại lượng</th>
+            <th class="weighted-column">Giá trị</th>
+          </tr>
+          <tr>
+            <td>Lambda Max (λmax)</td>
+            <td>{{ result['lambda_max'] }}</td>
+          </tr>
+          <tr>
+            <td>Số lượng tiêu chí (n)</td>
+            <td>{{ result['n'] }}</td>
+          </tr>
+          <tr>
+            <td>Consistency Index (CI)</td>
+            <td>{{ result['CI'] }}</td>
+          </tr>
+          <tr>
+            <td>Tỉ số nhất quán CR</td>
+            <td>{{ result['CR'] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="footersection" id="footerdiv">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12 footer-div">
+          <div>
+            <h3>Tổng quản về dự án</h3>
+            <p>Qua việc áp dụng AHP, chúng tôi mong muốn cung cấp cho người dùng một công cụ hữu ích để
+              hỗ trợ quyết định mua sắm, giúp họ chọn ra chiếc máy tính xách tay phản ánh tốt nhất nhu
+              cầu và mong muốn của mình. Đồng thời, dự án cũng đóng vai trò là một bước đi tiên phong
+              trong việc áp dụng các phương pháp phân tích toán học vào thực tiễn mua sắm công nghệ,
+              tạo ra giá trị và sự hiệu quả trong quyết định của người dùng.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 footer-div">
+          <div class="footer-navlinks">
+            <h3>Thanh điều hướng</h3>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Tính toám AHP</a></li>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-12 footer-div">
+          <div>
+            <h3>Liên hệ với chúng tôi</h3>
+            <div class="container newsletter-main">
+              <div class="row">
+                <div class="col-lg-12 col-12 ">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control newsletter-input" placeholder="Your Email">
+                    <div class="input-group-append">
+                      <span class="input-group-text">Sumbit</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 text-center">
+        <p>Copyright &copy;2024 All rights reserved</p>
+      </div>
+      <div class="scrolltop float-right">
+        <i class="fa fa-arrow-up" onclick="topFunction()" id="myBtn"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ********************* footer ends ****************************** -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+    integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+    integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $('.count').counterUp({
+      delay: 10,
+      time: 300
+    })
+    // Get the button:
+    mybutton = document.getElementById("myBtn");
+
+    //When the user scrolls down 20px from the top of the document, show the buttons
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    //When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const criteriaItems = document.querySelectorAll(".box-item");
+      const networks = document.querySelectorAll(".network");
+
+      function showCriteria() {
+        criteriaItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+          }, index * 200);
+        });
+      }
+
+      function showNetworks() {
+        networks.forEach((network, index) => {
+          setTimeout(() => {
+            network.style.opacity = "1";
+            network.style.transform = "translateY(0)";
+          }, index * 200);
+        });
+      }
+
+      showCriteria();
+      showNetworks();
+    });
+
+
+    let changeinputs = document.querySelectorAll(".change-input")
+
+    function reverseString(str) {
+      return str.split('').reverse().join('');
+    }
+
+    function reverseFraction(fraction) {
+      if (!fraction.includes("/")) {
+        // console.log(fraction);
+        return '1/' + fraction;
+      }
+
+      let parts = fraction.split('/');
+      let numerator = parseInt(parts[0]);
+      let denominator = parseInt(parts[1]);
+
+      // Đảo ngược phân số
+      let reversedFraction = denominator + '/' + numerator;
+      return reversedFraction;
+    }
+
+    changeinputs.forEach(input => {
+      input.addEventListener('change', function () {
+        let id = this.id;
+
+        let reversedId = reverseString(id);
+        let value = reverseFraction(this.value);
+
+        let reversedInput = document.getElementById(reversedId);
+        if (reversedInput) {
+          reversedInput.value = value;
+        }
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      const matrixInputs = document.querySelectorAll(".change-input");
+
+      matrixInputs.forEach(input => {
+        input.addEventListener('input', function () {
+          let value = parseFloat(this.value);
+
+          // Kiểm tra nếu giá trị là số 0 hoặc số âm
+          if (value <= 0 || isNaN(value) || value >= 9) {
+            alert("Vui lòng nhập số từ 0 tới 9");
+            this.value = ''; // Xóa giá trị nhập vào
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

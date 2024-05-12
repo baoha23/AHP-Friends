@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Result</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+
+<body>
+    <div>
+        <div class="container-screen">
+            <h1>AHP - Hệ hỗ trợ ra quyết định mua máy tính xách tay</h1>
+            <h1>Kết quả tính toán ma trận</h1>
+            <!-- Ma trận AHP -->
+            <!-- Danh sách các tiêu chí -->
+            <h2>Danh sách các tiêu chí:</h2>
+            <ul>
+                {% for criteria in criteria_data %}
+                <li>{{ criteria }}</li>
+                {% endfor %}
+            </ul>
+    
+            <h2>Ma trận AHP với tổng của các cột:</h2>
+            <table border="1" class="ahp-matrix">
+                <caption>Tổng sum AHP của mỗi cột</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        {% for criteria in criteria_data %}
+                        <th class="header-select">{{ criteria }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row_index in range(result['matrix']|length) %}
+                    <tr class="">
+                        <th class="header-select">{{ criteria_data[row_index] }}</th>
+                        {% for col_index in range(result['matrix'][row_index]|length) %}
+                        <td class="{% if row_index == col_index %}diagonal{% endif %}">{{
+                            result['matrix'][row_index][col_index] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <th class="total-select">Tổng</th>
+                        {% for val in result['column_sum'] %}
+                        <td class="total-select">{{ val }}</td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Ma trận so sánh cặp:</h2>
+            <table border="1" class="ahp-matrix">
+                <caption>Ma trận so sánh cặp</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        {% for criteria in criteria_data %}
+                        <th class="header-select">{{ criteria }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row_index in range(result['pairwise_matrix_with_weights']|length) %}
+                    <tr>
+                        <th class="header-select">{{ criteria_data[row_index] }}</th>
+                        {% for val in result['pairwise_matrix_with_weights'][row_index] %}
+                        <td>{{ val }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h2>Ma trận so sánh cặp với trọng số của các tiêu chí</h2>
+            <table border="1" class="ahp-matrix">
+                <caption>Ma trận so sánh cặp với trọng số của các tiêu chí</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        {% for criteria in criteria_data %}
+                        <th class="header-select">{{ criteria }}</th>
+                        {% endfor %}
+                        <th class="weighted-column">Critera Weighted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set row_index = 0 %}
+                    {% for row in result['pairwise_matrix_with_weights'] %}
+                    <tr>
+                        <th class="header-select">{{ criteria_data[loop.index0] }}</th>
+                        {% for val in row[0:] %}
+                        <td>{{ val }}</td>
+                        {% endfor %}
+                        <td class="weighted-column">{{ row[0] }}</td>
+                    </tr>
+                    {% set row_index = row_index + 1 %}
+                    {% endfor %}
+                </tbody>
+            </table>
+    
+            <h2>Ma trận so sánh cặp theo trọng số của các tiêu chí:</h2>
+            <table border="1">
+                <caption>Ma trận so sánh cặp theo trọng số của các tiêu chí</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        {% for criteria in criteria_data %}
+                        <th class="header-select">{{ criteria }}</th>
+                        {% endfor %}
+                        <th class="weightsum-value">Weighted Sum Value</th>
+                        <th class="weighted-column">Critera Weighted</th>
+                        <th class="consistency-vector">Consistency Vector</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row_index in range(result['weighted_matrix']|length) %}
+                    <tr>
+                        <th class="header-select">{{ criteria_data[row_index] }}</th>
+                        {% for col_index in range(result['weighted_matrix'][row_index]|length) %}
+                        <td>{{ result['weighted_matrix'][row_index][col_index] }}</td>
+                        {% endfor %}
+                        <td class="weightsum-value1">{{ result['weighted_sum_value'][row_index] }}</td>
+                        <td class="weighted-column1">{{ result['normalized_weights'][row_index] }}</td>
+                        <td class="consistency-vector1">{{ result['consistency_vector'][row_index] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    
+            <!-- Kết quả phân tích AHP -->
+            <h2>Kết quả phân tích AHP:</h2>
+            <table border="1">
+                <caption>Kết quả phân tích AHP</caption>
+                <tbody>
+                    <tr>
+                        <th class="header-select">Đại lượng</th>
+                        <th class="weighted-column">Giá trị</th>
+                    </tr>
+                    <tr>
+                        <td>Lambda Max (λmax)</td>
+                        <td>{{ result['lambda_max'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Số lượng tiêu chí (n)</td>
+                        <td>{{ result['n'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Consistency Index (CI)</td>
+                        <td>{{ result['CI'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Tỉ số nhất quán CR</td>
+                        <td>{{ result['CR'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Hỗ Trợ Ra Quyết Định Mua Máy Tính Xách Tay AHP</title>
+    <link rel="stylesheet" type="text/css" href="static/index-style.css">
+</head>
+
+<body>
+    
+    <section class='wrapper'>
+        <div class='hero'>
+        </div>
+        <div class='content'>
+            <div class="container">
+                <h1 class='h1--scalingSize'>Giới Thiệu về Hệ Thống Hỗ Trợ Ra Quyết Định Lựa chọn bạn bè bằng AHP</h1>
+                <p>--------</p>
+                <p>---------</p>
+                <p>Đơn giản chỉ cần nhập ma trận so sánh cặp của bạn vào hệ thống và chờ đợi để nhận được kết quả phân tích.</p>
+                <h2 class="cach-su-dung">Cách Sử Dụng:</h2>
+                <ol class="cach-su-dung">
+                    <li><strong>Nhập Số Lượng và Tên Tiêu Chí:</strong> Đầu tiên, nhập số lượng tiêu chí bạn muốn đánh giá, sau đó nhập tên cho mỗi tiêu chí.</li>
+                    <li><strong>Nhập Ma Trận So Sánh Cặp:</strong> Nhập các giá trị so sánh giữa các yếu tố quan trọng khi mua máy tính xách tay vào bảng dưới đây.</li>
+                    <li><strong>Đánh Giá và So Sánh:</strong> Hệ thống sẽ tự động phân tích ma trận so sánh cặp và tạo ra một đánh giá tổng thể về các yếu tố.</li>
+                    <li><strong>Xác Nhận Quyết Định:</strong> Dựa trên kết quả phân tích, bạn có thể dễ dàng xác định lựa chọn tốt nhất cho nhu cầu của mình.</li>
+                </ol>
+            <form action="/process_matrix" method="post" enctype="application/x-www-form-urlencoded" class="Nhap-ma-tran">
+                <h1>Nhập ma trận phu hợp </h1>
+                <table>
+                  <h3>Ma trận so sánh cặp theo tiêu chí</h3>
+                  <tbody>
+                    <tr>     
+                      <td><input value=" " disabled id="101" name="11" type="text" size="6"></td>
+                      <td><input value="Tuổi" disabled id="101" name="11" type="text" size="6"></td>
+                      <td><input value="Giới tính" disabled id="101" name="11" type="text" size="6"></td>
+                      <td><input value="Sở thích" disabled id="101" name="11" type="text" size="6"></td>
+                      <td><input value="Mối quan hệ muốn tìm" disabled id="11" name="11" type="text" size="6"></td>
+                      <td><input value="Công việc" disabled id="101" name="11" type="text" size="6"></td>
+                      <td><input value="Khoảng cách" disabled id="101" name="11" type="text" size="6"></td>
+                  </tr>
+                      <tr>
+                          <td><input value="Tuổi" disabled id="101" name="11" type="text" size="6"></td>
+                          <td><input value="1" disabled id="11" name="11" type="text" size="6"></td>
+                          <td><input class="change-input" id="12" name="12" type="text" size="6"></td>
+                          <td><input class="change-input" id="13" name="13" type="text" size="6"></td>
+                          <td><input class="change-input" id="14" name="14" type="text" size="6"></td>
+                          <td><input class="change-input" id="15" name="15" type="text" size="6"></td>
+                          <td><input class="change-input" id="16" name="16" type="text" size="6"></td>
+                      </tr>
+                      <tr>
+                        <td><input value="Giới tính" disabled id="101" name="11" type="text" size="6"></td>
+                          <td><input disabled id="21" name="21" type="text" size="6"></td>
+                          <td><input value="1" disabled id="22" name="22" type="text" size="6"></td>
+                          <td><input class="change-input" id="23" name="23" type="text" size="6"></td>
+                          <td><input class="change-input" id="24" name="24" type="text" size="6"></td>
+                          <td><input class="change-input" id="25" name="25" type="text" size="6"></td>
+                          <td><input class="change-input" id="26" name="26" type="text" size="6"></td>
+                      </tr>
+                      <tr>
+                        <td><input value="Sở thích" disabled id="101" name="11" type="text" size="6"></td>
+                          <td><input disabled id="31" name="31" type="text" size="6"></td>
+                          <td><input disabled id="32" name="32" type="text" size="6"></td>
+                          <td><input value="1" disabled id="33" name="33" type="text" size="6"></td>
+                          <td><input class="change-input" id="34" name="34" type="text" size="6"></td>
+                          <td><input class="change-input" id="35" name="35" type="text" size="6"></td>
+                          <td><input class="change-input" id="36" name="36" type="text" size="6"></td>
+                      </tr>
+                      <tr>
+                        <td><input value="Mối quan hệ muốn tìm" disabled id="101" name="11" type="text" size="6"></td>
+                          <td><input disabled id="41" name="41" type="text" size="6"></td>
+                          <td><input disabled id="42" name="42" type="text" size="6"></td>
+                          <td><input disabled id="43" name="43" type="text" size="6"></td>
+                          <td><input disabled value="1" disabled id="44" name="44" type="text" size="6"></td>
+                          <td><input class="change-input" id="45" name="45" type="text" size="6"></td>
+                          <td><input class="change-input" id="46" name="46" type="text" size="6"></td>
+                      </tr>
+                      <tr>
+                        <td><input value="Công việc" disabled id="101" name="11" type="text" size="6"></td>
+                          <td><input disabled id="51" name="51" type="text" size="6"></td>
+                          <td><input disabled id="52" name="52" type="text" size="6"></td>
+                          <td><input disabled id="53" name="53" type="text" size="6"></td>
+                          <td><input disabled id="54" name="54" type="text" size="6"></td>
+                          <td><input value="1" disabled id="55" name="55" type="text" size="6"></td>
+                          <td><input disabled id="56" name="56" type="text" size="6"></td>
+                      </tr>
+                      <tr>
+                        <td><input value="Khoảng cách" disabled id="101" name="11" type="text" size="6"></td>
+                          <td><input disabled id="61" name="61" type="text" size="6"></td>
+                          <td><input disabled id="62" name="62" type="text" size="6"></td>
+                          <td><input disabled id="63" name="63" type="text" size="6"></td>
+                          <td><input disabled id="64" name="64" type="text" size="6"></td>
+                          <td><input disabled id="65" name="65" type="text" size="6"></td
+                         <td><input value="1" disabled id="66" name="66" type="text" size="6"></td>
+                      </tr>
+                  </tbody>
+                </table>
+                <input type="submit" value="Process" />
+              </form>
+            </div>
+        </div>
+      </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const criteriaItems = document.querySelectorAll(".box-item");
+          const networks = document.querySelectorAll(".network");
+    
+          function showCriteria() {
+            criteriaItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.style.opacity = "1";
+                item.style.transform = "translateY(0)";
+              }, index * 200);
+            });
+          }
+    
+          function showNetworks() {
+            networks.forEach((network, index) => {
+              setTimeout(() => {
+                network.style.opacity = "1";
+                network.style.transform = "translateY(0)";
+              }, index * 200);
+            });
+          }
+    
+          showCriteria();
+          showNetworks();
+        });
+    
+        
+          let changeinputs = document.querySelectorAll(".change-input")
+      
+          function reverseString(str) {
+              return str.split('').reverse().join('');
+          }
+      
+          function reverseFraction(fraction) {
+              if (!fraction.includes("/")) {
+                  // console.log(fraction);
+                  return '1/' + fraction;
+              }
+              
+              let parts = fraction.split('/');
+              let numerator = parseInt(parts[0]);
+              let denominator = parseInt(parts[1]);
+      
+              // Đảo ngược phân số
+              let reversedFraction = denominator + '/' + numerator;
+              return reversedFraction;
+          }
+      
+          changeinputs.forEach(input => {
+              input.addEventListener('change', function() {
+                  let id = this.id;
+                  
+                  let reversedId = reverseString(id);
+                  let value = reverseFraction(this.value);
+                  
+                  let reversedInput = document.getElementById(reversedId);
+                  if (reversedInput) {
+                      reversedInput.value = value;
+                  }
+              });
+          });
+          document.addEventListener("DOMContentLoaded", function() {
+            const matrixInputs = document.querySelectorAll(".change-input");
+        
+            matrixInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    let value = parseFloat(this.value);
+        
+                    // Kiểm tra nếu giá trị là số 0 hoặc số âm
+                    if (value <= 0 || isNaN(value)) {
+                        alert("Vui lòng nhập số lớn hơn 0.");
+                        this.value = ''; // Xóa giá trị nhập vào
+                    }
+                });
+            });
+        });
+      </script>
+      <script src="button.js"></script>
+</body>
+
+</html>

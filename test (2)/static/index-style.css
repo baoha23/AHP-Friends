@@ -1,0 +1,340 @@
+/* CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+img {
+    float: right;
+    margin: 0 0 20px 20px;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Thêm định dạng cho input tên tiêu chí */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.nhaptieuchi{
+    width: 300px;
+    padding:0px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.form-format{
+    margin-top: 50px;
+    display: flex;
+   
+}
+.nhapmatran{
+    border:1px solid whitesmoke;
+    width: 550px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+.nhapmatran textarea{
+    margin-top: 20px;
+    border:1px solid black;
+    width: 400px;
+}
+.nhapmatran input{
+    margin-bottom: 20px;
+}
+.nhaptieuchi{
+    border:1px solid whitesmoke;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 660px;
+    margin-right: 40px;
+    margin-left: 40px;
+    border-radius: 20px;
+}
+.nhaptieuchi h4{
+    margin-top: 20px;
+}
+.nhaptieuchi input{
+    margin-bottom: 20px;
+}
+div#criteriaInputs input{
+    background-color: whitesmoke;
+    width: 400px;
+}
+div#criteriaInputs{
+   margin-left: 30px;
+}
+.criteria-input {
+    display: flex;
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+}
+.criteria-input label {
+    margin-right: 10px; /* Khoảng cách giữa nhãn và ô nhập */
+}
+/*-----------------------------------------*/
+@keyframes blink-animation {
+    0%,
+    100% {
+      opacity: var(--blink-opacity, 1);
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  /*houdini*/
+  
+  /*base*/
+  :root {
+    font-family: Inter, sans-serif;
+  
+    --stripe-color: #fff;
+    --bg: var(--stripe-color);
+    --maincolor: var(--bg);
+  }
+  
+  body {
+    width: 100cqw;
+    min-height: 100cqh;
+    display: flex;
+    place-content: center;
+    place-items: flex-start center;
+    background: var(--bg);
+  }
+  
+  /*custom*/
+  
+  @keyframes smoothBg {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+  
+  .wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+    
+  }
+  
+  .hero {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    --stripes: repeating-linear-gradient(
+      100deg,
+      var(--stripe-color) 0%,
+      var(--stripe-color) 7%,
+      transparent 10%,
+      transparent 12%,
+      var(--stripe-color) 16%
+    );
+  
+    --rainbow: repeating-linear-gradient(
+      100deg,
+      #60a5fa 10%,
+      #e879f9 15%,
+      #60a5fa 20%,
+      #5eead4 25%,
+      #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+  
+    filter: blur(10px) invert(100%);
+  
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--stripes), var(--rainbow);
+      background-size: 200%, 100%;
+      animation: smoothBg 60s linear infinite;
+      background-attachment: fixed;
+      mix-blend-mode: difference;
+    }
+  }
+  
+  :has(:checked) {
+    --stripe-color: #000;
+  }
+  :has(:checked) .hero,
+  :has(:checked) .hero::after {
+    filter: blur(10px) opacity(50%) saturate(200%);
+  }
+  
+  .content {
+    position: absolute;
+    inset: 0;
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex-flow: column;
+    gap: 4.5%;
+    text-align: center;
+    mix-blend-mode: difference;
+    -webbkit-mix-blend-mode: difference;
+    filter: invert(1);
+  }
+  
+  .h1--scalingSize {
+    font-size: calc(0.1rem - -3vw);
+    position: relative;
+  }
+  
+  #switch {
+    appearance: none;
+    -webkit-appearance: none;
+    opacity: 0;
+  }
+  
+  [for="switch"] {
+    cursor: pointer;
+    transition: 0.15s linear(0 0%, 0.16 16.85%, 0.32 31.73%, 1 100%);
+    will-change: transform, font-weight;
+    padding: 0.5rem;
+  }
+  
+  [for="switch"]:where(:hover, :active, :focus-within) {
+    /*transform: scale(1.2);
+    font-weight: 900;*/
+    transition: 0.3s ease;
+    animation: animSwitch 0.2s alternate;
+    & .icon {
+      animation-play-state: paused;
+    }
+  }
+  
+  @keyframes animSwitch {
+    50% {
+      transform: scale(1.2);
+      font-weight: 900;
+    }
+  }
+  
+  /*icon houdini*/
+  .icon {
+    width: 1lh;
+    height: 1lh;
+    aspect-ratio: 1/1;
+    padding: 0.25em 0.35rem;
+    border-radius: calc(1px / 0);
+    border: 1px dashed;
+    --blink-opacity: 1;
+    animation: blink-animation 2s ease-in-out infinite running;
+  }
+  
+  /*challenge*/
+  .h1--scalingSize::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    background: white;
+    text-shadow: 0 0 1px #ffffff;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: white;
+    -webkit-mask: linear-gradient(#000 0 0) luminance;
+    mask: linear-gradient(#000 0 0) luminance, alpha;
+    backdrop-filter: blur(19px) brightness(12.5);
+    -webkit-text-stroke: 1px white;
+    display: flex;
+    margin: auto;
+    z-index: 1;
+    pointer-events: none;
+  }
