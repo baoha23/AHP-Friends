@@ -27,7 +27,7 @@ def process_matrix():
     value13 = float(request.form.get("13"))
     value14 = float(request.form.get("14"))
     value15 = float(request.form.get("15"))
-    row1.extend([value11, value12, value13, value14, value15])
+    row1.extend([value11, value12, value13, value14, value15,])
 
     row2 = []
     value21 = 1 / (float(request.form.get("12")) if request.form.get("12").isdigit() else float(request.form.get("12")))
