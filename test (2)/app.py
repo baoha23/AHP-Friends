@@ -27,7 +27,8 @@ def process_matrix():
     value13 = float(request.form.get("13"))
     value14 = float(request.form.get("14"))
     value15 = float(request.form.get("15"))
-    row1.extend([value11, value12, value13, value14, value15,])
+    value16 = float(request.form.get("16"))
+    row1.extend([value11, value12, value13, value14, value15, value16])
 
     row2 = []
     value21 = 1 / (float(request.form.get("12")) if request.form.get("12").isdigit() else float(request.form.get("12")))
@@ -35,7 +36,8 @@ def process_matrix():
     value23 = convert_to_float(request.form.get("23"))
     value24 = convert_to_float(request.form.get("24"))
     value25 = float(request.form.get("25"))
-    row2.extend([value21, value22, value23, value24, value25])
+    value26 = float(request.form.get("26"))
+    row2.extend([value21, value22, value23, value24, value25, value26])
 
     row3 = []
     value31 = 1 / (float(request.form.get("13")) if request.form.get("13").isdigit() else float(request.form.get("13")))
@@ -43,7 +45,8 @@ def process_matrix():
     value33 = 1
     value34 = convert_to_float(request.form.get("34"))
     value35 = float(request.form.get("35"))
-    row3.extend([value31, value32, value33, value34, value35])
+    value36 = float(request.form.get("36"))
+    row3.extend([value31, value32, value33, value34, value35, value36])
 
     row4 = []
     value41 = 1 / (float(request.form.get("14")) if request.form.get("14").isdigit() else float(request.form.get("14")))
@@ -51,7 +54,8 @@ def process_matrix():
     value43 = 1 / (convert_to_float(request.form.get("34")) if request.form.get("34").isdigit() else convert_to_float(request.form.get("34")))
     value44 = 1
     value45 = float(request.form.get("45"))
-    row4.extend([value41, value42, value43, value44, value45])
+    value46 = float(request.form.get("46"))
+    row4.extend([value41, value42, value43, value44, value45, value46])
 
     row5 = []
     value51 = 1 / (float(request.form.get("15")) if request.form.get("15").isdigit() else float(request.form.get("15")))
@@ -59,9 +63,20 @@ def process_matrix():
     value53 = 1 / (float(request.form.get("35")) if request.form.get("35").isdigit() else float(request.form.get("35")))
     value54 = 1 / (float(request.form.get("45")) if request.form.get("45").isdigit() else float(request.form.get("45")))
     value55 = 1
-    row5.extend([value51, value52, value53, value54, value55])
+    value56 = float(request.form.get("56"))
+    row5.extend([value51, value52, value53, value54, value55, value56])
 
-    data.extend([row1, row2, row3, row4, row5])
+    row6 = []
+    value61 = 1 / (float(request.form.get("16")) if request.form.get("16").isdigit() else float(request.form.get("16")))
+    value62 = 1 / (float(request.form.get("26")) if request.form.get("26").isdigit() else float(request.form.get("26")))
+    value63 = 1 / (float(request.form.get("36")) if request.form.get("36").isdigit() else float(request.form.get("36")))
+    value64 = 1 / (float(request.form.get("46")) if request.form.get("46").isdigit() else float(request.form.get("46")))
+    value65 = 1 / (float(request.form.get("56")) if request.form.get("56").isdigit() else float(request.form.get("56")))
+    value66 = 1
+    row6.extend([value61, value62, value63, value64, value65, value66])
+
+
+    data.extend([row1, row2, row3, row4, row5, row6])
 
     matrix = np.array(data).round(2)  # Chuyển DataFrame thành ma trận NumPy với số lẻ làm tròn đến 2 chữ số thập phân
 
@@ -105,7 +120,7 @@ def process_matrix():
     pairwise_matrix_with_weights = np.column_stack((normalized_weights, pairwise_matrix))
 
     # Truyền dữ liệu vào trang result.html và render trang đó
-    criteria_data = ["Giá tiền", "Hãng sản xuất", "Ram", "Màn hình", "Trọng lượng"]
+    criteria_data = ["Tuổi", "Giới tính", "Công việc", "Mối quan hệ muốn tìm", "Sở thích", "Khoảng cách"]
     result = {
         'matrix': matrix.tolist(),  # Chuyển ma trận NumPy thành danh sách
         'column_sum': column_sum.tolist(),

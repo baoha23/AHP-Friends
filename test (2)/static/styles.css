@@ -8,17 +8,19 @@ body {
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff8a65;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #ffe4e1;
 }
 
 h1 {
     text-align: center;
+    color: #6a1b9a;
 }
 
 h2 {
     margin-top: 20px;
+    color: #6a1b9a;
 }
 
 table {
@@ -28,20 +30,21 @@ table {
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #ff8a65;
     padding: 8px;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #fad3b2;
+    color: #6a1b9a;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #ffe4e1;
 }
 
 tr:hover {
-    background-color: #ddd;
+    background-color: #ffdab9;
 }
 
 .ahp-matrix {
@@ -54,29 +57,37 @@ tr:hover {
 }
 
 .diagonal {
-    background-color: #f27912;
+    background-color: #ff8a65;
 }
-.total-select{
-    background-color: #fad3b2;
+
+.total-select {
+    background-color: #ffcccb;
 }
-.header-select{
-    background-color: #73abff;
+
+.header-select {
+    background-color: #d69ff8;
 }
-.weighted-column{
-    background-color: #e6db00;
+
+.weighted-column {
+    background-color: #ffcc99;
 }
-.weightsum-value{
-    background-color: red;
+
+.weightsum-value {
+    background-color: #ff6666;
 }
-.consistency-vector{
-    background-color: rgb(4, 255, 0);
+
+.consistency-vector {
+    background-color: #b2fab4;
 }
-.weighted-column1{
-    background-color: #fffaa2;
+
+.weighted-column1 {
+    background-color: #ffeb99;
 }
-.weightsum-value1{
-    background-color: rgb(255, 145, 145);
+
+.weightsum-value1 {
+    background-color: #ff9999;
 }
-.consistency-vector1{
-    background-color: rgb(138, 255, 136);
+
+.consistency-vector1 {
+    background-color: #d2f8d2;
 }
